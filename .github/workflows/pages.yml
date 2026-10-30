@@ -28,6 +28,12 @@ jobs:
           mkdir -p public/app-preview
           unzip -o WHISPERS-Interactive-Preview-02.zip -d extracted
           cp -R extracted/Hamsat-Foundation/. public/app-preview/
+      - name: Save extracted app source for safe redesign
+        uses: actions/upload-artifact@v4
+        with:
+          name: whispers-app-source
+          path: extracted/Hamsat-Foundation/
+          retention-days: 7
       - name: Prepare premium WHISPERS partner landing
         run: |
           cp partner-site/index.html public/index.html
