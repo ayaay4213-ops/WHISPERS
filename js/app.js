@@ -7,7 +7,7 @@ const tabbar = $('#tabbar');
 
 const state = { account: null, profile: null, wallet: null, gifts: null };
 
-const COLORS = ['#7c3aed', '#9d174d', '#0f766e', '#b45309', '#1d4ed8', '#6d28d9', '#be123c', '#047857'];
+const COLORS = ['#554365', '#67536f', '#74634f', '#4c5960', '#65566a', '#75654e', '#4e6260', '#625b72'];
 const TOPICS = ['عام', 'دردشة', 'شعر وأدب', 'موسيقى', 'تقنية', 'رياضة', 'تعارف', 'ألعاب'];
 
 /* ---------- helpers ---------- */
@@ -84,7 +84,7 @@ function welcomeScreen() {
   screen.innerHTML = `
   <div class="auth-page flex-1 flex flex-col fade-in">
     <div class="auth-brand text-center px-7 pt-8">
-      <img src="assets/hamsat-hero.svg" alt="امرأة أنيقة وقط أبيض بزخارف ذهبية" class="auth-art">
+      <img src="https://fitfamilyradio.com/images/joomlart/author/1.jpg" alt="امرأة أنيقة وقط أبيض بزخارف ذهبية" class="auth-art">
       <p class="text-gold-400 text-xs tracking-[.35em] mb-1">WELCOME TO</p>
       <h1 class="text-4xl font-extrabold text-gold-300 mb-1">Whispers</h1>
       <p class="text-xs tracking-[.3em] text-gold-600">W H I S P E R S</p>
@@ -212,7 +212,7 @@ async function homeScreen() {
   </header>
   <div class="px-5 space-y-6 pb-6 fade-in">
     <div class="card ornament p-5 border-gold-600/30 home-hero-card">
-      <img src="assets/hamsat-hero.svg" alt="زخارف Whispers الذهبية مع قطة بيضاء" class="home-hero-art">
+      <img src="https://fitfamilyradio.com/images/joomlart/author/1.jpg" alt="زخارف Whispers الذهبية مع قطة بيضاء" class="home-hero-art">
       <p class="text-gold-400 text-sm font-medium mb-1">Whispers</p>
       <h2 class="text-xl font-bold mb-2 leading-8">أنشئ غرفتك وابدأ الحديث</h2>
       <p class="text-[13px] text-[#bba9d6] leading-6 mb-4">اختر موضوعًا وادعُ أصدقاءك. ميزة البث الصوتي المباشر قيد التطوير حاليًا.</p>
