@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
   pages: write
   id-token: write
 
@@ -23,41 +23,21 @@ jobs:
     steps:
       - name: Download repository
         uses: actions/checkout@v4
-        with:
-          persist-credentials: true
-
-      - name: Extract WHISPERS project
+      - name: Extract original app preview
         run: |
-          mkdir -p public
-          unzip -o WHISPERS-Interactive-Preview-02.zip -d public
-          if [ -f public/Hamsat-Foundation/index.html ]; then
-            echo "Project extracted successfully"
-          else
-            echo "Project index.html not found"
-            exit 1
-          fi
-
-      - name: Make source files editable in repository
+          mkdir -p public/app-preview
+          unzip -o WHISPERS-Interactive-Preview-02.zip -d extracted
+          cp -R extracted/Hamsat-Foundation/. public/app-preview/
+      - name: Prepare premium WHISPERS partner landing
         run: |
-          cp -a public/Hamsat-Foundation/. .
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add index.html admin.html manifest.json icon.svg icons assets css js workers partner-kit
-          if ! git diff --cached --quiet; then
-            git commit -m "Add extracted WHISPERS source files"
-            git push
-          else
-            echo "Source files are already up to date"
-          fi
-
+          cp partner-site/index.html public/index.html
+          cp partner-site/styles.css public/styles.css
       - name: Configure Pages
         uses: actions/configure-pages@v5
-
       - name: Upload website
         uses: actions/upload-pages-artifact@v3
         with:
-          path: public/Hamsat-Foundation
-
+          path: public
       - name: Publish website
         id: deployment
         uses: actions/deploy-pages@v4
