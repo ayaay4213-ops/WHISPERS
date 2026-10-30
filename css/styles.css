@@ -239,33 +239,33 @@ body{background-image:radial-gradient(ellipse at 50% -12%,rgba(76,48,105,.22),tr
 .auth-panel{background:linear-gradient(145deg,#22182e,#120c1a)!important;border-color:rgba(215,189,120,.2)!important;box-shadow:0 16px 42px rgba(0,0,0,.35)!important;backdrop-filter:none!important}
 
 
-/* WHISPERS preview: background artwork only; foreground login remains untouched. */
+
+/* WHISPERS artwork: correct deployed asset path and keep all controls above the blur. */
 #local-auth {
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  background: rgba(8, 5, 16, .72) !important;
+  background: rgba(8, 5, 16, .60) !important;
 }
 #local-auth::before {
   content: "";
   position: absolute;
-  inset: -18px;
-  z-index: -1;
+  inset: 0;
+  z-index: 0;
   pointer-events: none;
-  background: url("../assets/file_0000000016d881f4a85b4fbbc4e28f06.png") center 28% / cover no-repeat;
+  background: url("../assets/whispers-user-art.png") center 28% / cover no-repeat;
   filter: blur(16px);
-  opacity: .38;
+  opacity: .42;
 }
-body {
-  background-color: #090411;
-}
-body::before {
+#local-auth > * { position: relative; z-index: 1; }
+#app { position: relative; isolation: isolate; }
+#app::before {
   content: "";
   position: fixed;
   inset: -20px;
   z-index: -1;
   pointer-events: none;
-  background: url("../assets/file_0000000016d881f4a85b4fbbc4e28f06.png") center / cover no-repeat;
+  background: url("assets/whispers-user-art.png") center / cover no-repeat;
   filter: blur(18px);
-  opacity: .10;
+  opacity: .13;
 }
