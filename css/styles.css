@@ -221,3 +221,19 @@ body{background-image:radial-gradient(ellipse at 50% -10%,rgba(108,52,146,.32),t
 .toast{background:rgba(30,14,45,.97);border-color:rgba(232,196,93,.36)}
 .sheet{background:linear-gradient(155deg,rgba(39,19,58,.98),rgba(12,5,21,.99));border-top-color:rgba(232,196,93,.30)}
 @media(max-width:380px){#screen .home-hero-card{padding:13px!important}}
+
+/* WHISPERS refined royal palette */
+:root{--gold:#d7bd78;--ink:#100a18}
+html,body{background:#090611!important;color:#f5f0e8}
+body{background-image:radial-gradient(ellipse at 50% -12%,rgba(76,48,105,.22),transparent 48%),linear-gradient(160deg,#090611,#100a18 55%,#090611)!important}
+.app-shell{background:linear-gradient(180deg,#130d1d,#0b0712)!important}
+.card{background:linear-gradient(145deg,#241931,#130d1c)!important;border:1px solid rgba(215,189,120,.14)!important;box-shadow:0 8px 24px rgba(0,0,0,.22)!important;backdrop-filter:none!important}
+#screen section h3{color:#ead9ad!important}
+#screen [data-room],#screen #gifts-grid>.card{background:linear-gradient(145deg,#21172d,#17101f)!important;border-color:rgba(215,189,120,.13)!important}
+#screen .chip{background:#21172d;border-color:#44334f;color:#d8cce3}
+#screen .chip.active{background:#d7bd78;border-color:#d7bd78;color:#1b1420}
+#tabbar{background:rgba(15,10,22,.97)!important;border-top:1px solid rgba(215,189,120,.2)!important}
+#tabbar .tab{color:#a99bb5}#tabbar .tab.active{color:#e5d09a;text-shadow:none}
+.btn-gold{background:linear-gradient(135deg,#e8d6a4,#c9ad68)!important;color:#201827!important;border:1px solid rgba(255,239,190,.35)!important;box-shadow:0 5px 16px rgba(0,0,0,.2)!important}
+.auth-page{background:linear-gradient(180deg,#0c0713,#160e20 55%,#0b0711)!important}
+.auth-panel{background:linear-gradient(145deg,#22182e,#120c1a)!important;border-color:rgba(215,189,120,.2)!important;box-shadow:0 16px 42px rgba(0,0,0,.35)!important;backdrop-filter:none!important}
