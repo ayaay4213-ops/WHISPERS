@@ -45,6 +45,8 @@ jobs:
           <script>window.setTimeout(function(){var s=document.getElementById('whispers-splash');if(s){s.classList.add('hide');window.setTimeout(function(){s.remove();},500);}},2000);</script>
           """
           s = s.replace('<body class="bg-ink-950 text-white font-sans antialiased">', '<body class="bg-ink-950 text-white font-sans antialiased">' + splash, 1)
+          # Replace the actual fallback login artwork source (the earlier selector did not match).
+          s = s.replace('https://fitfamilyradio.com/images/joomlart/author/1.jpg', 'assets/whispers-user-art.png', 1)
           s = s.replace('src="assets/hamsat-hero.svg" alt="امرأة أنيقة وقط أبيض بزخارف ذهبية" class="auth-art"', 'src="assets/whispers-user-art.png" alt="Whispers" class="auth-art"')
           p.write_text(s)
           css = Path("public/app-preview/css/styles.css")
