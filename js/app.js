@@ -90,15 +90,15 @@ function welcomeScreen() {
   screen.innerHTML = `
   <div class="auth-page flex-1 flex flex-col fade-in">
     <div class="auth-brand text-center px-7 pt-8">
-      <img src="assets/whispers-user-art.png" alt="Whispers" class="auth-art">
-      <p class="text-gold-400 text-xs tracking-[.35em] mb-1">WELCOME TO</p>
-      <h1 class="text-4xl font-extrabold text-gold-300 mb-1">Whispers</h1>
-      <p class="text-xs tracking-[.3em] text-gold-600">W H I S P E R S</p>
-      <p class="text-sm text-[#cbb9a6] leading-7 mt-3">مساحتك الخاصة للحديث، والتعارف، وصناعة لحظات جميلة.</p>
+      <div class="auth-logo text-center">
+        <h1 class="text-4xl font-extrabold text-gold-300 mb-1">همسات</h1>
+        <p class="text-xs tracking-[.25em] text-gold-300">H A M S A T</p>
+        <p class="text-sm text-[#f1e5cf] leading-7 mt-3">حيث تلتقي الأصوات بالقلوب</p>
+      </div>
     </div>
     <div class="auth-panel mx-5 mt-5 mb-8 p-5 rounded-3xl">
       <h2 class="text-xl font-bold mb-1" id="auth-title">أهلًا بكِ من جديد</h2>
-      <p class="text-sm text-[#b7b2a5] mb-5" id="auth-subtitle">سجّلي الدخول للانتقال إلى الصفحة الرئيسية</p>
+      <p class="text-sm text-[#b7b2a5] mb-5" id="auth-subtitle">سجّلي الدخول إلى حسابك</p>
       <div class="grid grid-cols-2 gap-2 mb-4" id="auth-methods">
         <button type="button" data-method="email" class="auth-method active">البريد الإلكتروني</button>
         <button type="button" data-method="phone" class="auth-method">رقم الهاتف</button>
@@ -112,12 +112,12 @@ function welcomeScreen() {
           <label class="label">تأكيد كلمة المرور</label>
           <input id="auth-confirm" class="field" type="password" minlength="6" placeholder="أعيدي كتابة كلمة المرور">
         </div>
-        <button type="submit" class="btn-gold w-full mt-2" id="auth-submit"><i data-lucide="log-in" class="w-5 h-5"></i>تسجيل الدخول</button>
+        <button type="submit" class="btn-gold w-full mt-2" id="auth-submit"><i data-lucide="log-in" class="w-5 h-5"></i>دخول</button>
       </form>
       <button id="auth-create" class="btn-ghost w-full mt-3">إنشاء حساب جديد</button>
       <button id="auth-back" class="btn-ghost w-full mt-3 hidden">لديك حساب؟ تسجيل الدخول</button>
-      <div class="auth-divider"><span>أو للتجربة الحالية</span></div>
-      <button id="btn-signin" class="btn-ghost w-full"><i data-lucide="user-round" class="w-5 h-5"></i>الدخول التجريبي عبر Puter</button>
+      <div class="auth-divider"><span>أو</span></div>
+      <button id="btn-signin" class="btn-ghost w-full"><i data-lucide="user-round" class="w-5 h-5"></i>الدخول عبر Puter</button>
       <p class="text-[11px] text-center text-[#9c9686] leading-5 mt-4">واجهة التسجيل بالبريد والهاتف تحتاج ربط خدمة حسابات فعلية لتفعيل إنشاء الحسابات.</p>
     </div>
   </div>`;
