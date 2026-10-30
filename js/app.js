@@ -64,10 +64,16 @@ async function signIn() {
 }
 async function signOut() {
   closeSheet();
-  try { puter.auth.signOut(); } catch (e) {}
+  // Clear the local session first so the authenticated screens cannot remain visible.
   state.account = state.profile = state.wallet = null;
+  tabbar.classList.add('hidden');
   location.hash = '#/home';
-  render();
+  try {
+    await puter.auth.signOut();
+  } catch (e) {
+    // Even if the provider sign-out request fails, return to the login screen.
+  }
+  welcomeScreen();
 }
 
 async function loadMe() {
