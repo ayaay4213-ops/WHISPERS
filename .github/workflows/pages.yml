@@ -28,11 +28,10 @@ jobs:
         run: |
           mkdir -p public
           unzip -o WHISPERS-Interactive-Preview-02.zip -d public
-          if [ -f public/index.html ]; then
+          if [ -f public/Hamsat-Foundation/index.html ]; then
             echo "Project extracted successfully"
           else
-            echo "index.html not found at project root"
-            find public -name index.html
+            echo "Project index.html not found"
             exit 1
           fi
 
@@ -42,7 +41,7 @@ jobs:
       - name: Upload website
         uses: actions/upload-pages-artifact@v3
         with:
-          path: public
+          path: public/Hamsat-Foundation
 
       - name: Publish website
         id: deployment
