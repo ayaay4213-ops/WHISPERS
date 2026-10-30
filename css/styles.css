@@ -278,3 +278,32 @@ body{background-image:radial-gradient(ellipse at 50% -12%,rgba(76,48,105,.22),tr
   position: relative;
   z-index: 1;
 }
+
+
+/* WHISPERS LOGIN: owner-provided blurred background, sample-style glass form */
+.auth-page{
+  position:relative;isolation:isolate;overflow:hidden;
+  min-height:100dvh;
+  background:
+    linear-gradient(180deg,rgba(10,4,19,.28),rgba(10,4,19,.78)),
+    url("../assets/login-background.png.jpg") center center/cover no-repeat fixed !important;
+}
+.auth-page:before{
+  content:"";position:absolute;inset:-14px;z-index:-1;pointer-events:none;
+  background:url("../assets/login-background.png.jpg") center center/cover no-repeat;
+  filter:blur(12px);opacity:.42;
+}
+.auth-brand{padding-top:clamp(42px,9vh,90px)!important}
+.auth-logo{padding:18px 12px 24px;text-shadow:0 2px 18px rgba(0,0,0,.8)}
+.auth-panel{
+  background:rgba(20,9,31,.62)!important;
+  border:1px solid rgba(232,196,93,.48)!important;
+  box-shadow:0 18px 55px rgba(0,0,0,.42),inset 0 1px 0 rgba(255,255,255,.10)!important;
+  -webkit-backdrop-filter:blur(22px) saturate(130%);
+  backdrop-filter:blur(22px) saturate(130%);
+}
+.auth-panel h2{color:#f5e2a0}
+.auth-panel .label{color:#f0dfb6}
+.auth-panel .field{background:rgba(9,4,17,.62);border-color:rgba(232,196,93,.34)}
+.auth-panel .btn-gold{font-size:16px;min-height:50px}
+@media(max-width:380px){.auth-brand{padding-top:34px!important}.auth-logo{padding-bottom:16px}.auth-panel{margin-top:10px!important}}
