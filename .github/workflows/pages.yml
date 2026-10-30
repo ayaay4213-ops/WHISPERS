@@ -28,11 +28,6 @@ jobs:
           mkdir -p public/app-preview
           unzip -o WHISPERS-Interactive-Preview-02.zip -d extracted
           cp -R extracted/Hamsat-Foundation/. public/app-preview/
-          # Apply the maintained WHISPERS app files over the archived preview
-          mkdir -p public/app-preview/css public/app-preview/js
-          cp index.html public/app-preview/index.html
-          cp css/styles.css public/app-preview/css/styles.css
-          cp js/app.js public/app-preview/js/app.js
       - name: Prepare premium WHISPERS partner landing
         run: |
           cp partner-site/index.html public/index.html
