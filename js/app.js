@@ -503,7 +503,7 @@ async function render() {
   const route = parts[0] || 'home';
 
   tabbar.classList.remove('hidden');
-  screen.className = 'flex-1 flex flex-col has-tabbar';
+  screen.className = 'flex-1 flex flex-col has-tabbar interior-bg';
   tabbar.querySelectorAll('.tab').forEach(t => t.classList.toggle('active', t.dataset.tab === route));
   window.scrollTo(0, 0);
 
