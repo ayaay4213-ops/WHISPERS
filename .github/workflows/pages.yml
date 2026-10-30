@@ -55,6 +55,14 @@ jobs:
           .auth-page:after{content:"";position:absolute;inset:-18px;z-index:-1;background:url("../assets/whispers-user-art.png") center 24%/cover no-repeat;filter:blur(16px);opacity:.24;pointer-events:none}
           .auth-page>*{position:relative;z-index:1}
           """
+          # Apply the same artwork as a subtle, softly blurred atmosphere across app screens,
+          # while keeping foreground controls and text crisp and readable.
+          c += """
+          body{position:relative;isolation:isolate}
+          body:before{content:"";position:fixed;inset:-22px;z-index:-1;pointer-events:none;background:url("../assets/whispers-user-art.png") center/cover no-repeat;filter:blur(13px);opacity:.13}
+          .auth-page:after{filter:blur(14px);opacity:.28}
+          .auth-page{background-color:rgba(9,4,17,.18)}
+          """
           css.write_text(c)
           PY
       - name: Save extracted app source for safe redesign
