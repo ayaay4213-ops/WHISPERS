@@ -258,14 +258,23 @@ body{background-image:radial-gradient(ellipse at 50% -12%,rgba(76,48,105,.22),tr
   opacity: .42;
 }
 #local-auth > * { position: relative; z-index: 1; }
-#app { position: relative; isolation: isolate; }
-#app::before {
+/* Soft blurred artwork only behind signed-in app screens; login stays untouched. */
+#screen.interior-bg {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+#screen.interior-bg::before {
   content: "";
-  position: fixed;
-  inset: -20px;
-  z-index: -1;
+  position: absolute;
+  inset: -14px;
+  z-index: 0;
   pointer-events: none;
-  background: url("assets/whispers-user-art.png") center / cover no-repeat;
-  filter: blur(18px);
-  opacity: .13;
+  background: url("../assets/whispers-user-art.png") center 28% / cover no-repeat;
+  filter: blur(13px);
+  opacity: .16;
+}
+#screen.interior-bg > * {
+  position: relative;
+  z-index: 1;
 }
