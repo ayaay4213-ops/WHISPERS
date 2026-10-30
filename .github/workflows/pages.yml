@@ -30,6 +30,7 @@ jobs:
           cp -R extracted/Hamsat-Foundation/. public/app-preview/
           # Use the exact image uploaded by the owner; keep the original SVG and all screens intact.
           cp assets/file_0000000016d881f4a85b4fbbc4e28f06.png public/app-preview/assets/whispers-user-art.png
+          cp login-background.png.jpg public/app-preview/assets/login-background.png.jpg
           # Add a two-second full-screen opening, then reveal the existing app unchanged.
           python3 - <<'PY'
           from pathlib import Path
