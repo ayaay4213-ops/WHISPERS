@@ -1,0 +1,49 @@
+name: Publish WHISPERS Preview
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download repository
+        uses: actions/checkout@v4
+
+      - name: Extract WHISPERS project
+        run: |
+          mkdir -p public
+          unzip -o WHISPERS-Interactive-Preview-02.zip -d public
+          if [ -f public/index.html ]; then
+            echo "Project extracted successfully"
+          else
+            echo "index.html not found at project root"
+            find public -name index.html
+            exit 1
+          fi
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload website
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+
+      - name: Publish website
+        id: deployment
+        uses: actions/deploy-pages@v4
