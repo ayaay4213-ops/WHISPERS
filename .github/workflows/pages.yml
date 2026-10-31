@@ -79,7 +79,7 @@ jobs:
           cp css/styles.css public/app-preview/css/styles.css
           cp js/app.js public/app-preview/js/app.js
           # Remove the entire login artwork tile while keeping the welcome text and brand name below it.
-          printf '\n.auth-art{display:none!important}\n' >> public/app-preview/css/styles.css
+          printf '\n.auth-art,.auth-brand img,.auth-brand picture,.auth-brand .auth-logo img{display:none!important}\n' >> public/app-preview/css/styles.css
       - name: Save extracted app source for safe redesign
         uses: actions/upload-artifact@v4
         with:
