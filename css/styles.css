@@ -289,9 +289,9 @@ body{background-image:radial-gradient(ellipse at 50% -12%,rgba(76,48,105,.22),tr
     url("../assets/login-background.png.jpg") center center/cover no-repeat fixed !important;
 }
 .auth-page:before{
-  content:"";position:absolute;inset:-14px;z-index:-1;pointer-events:none;
+  content:"";position:absolute;inset:-5px;z-index:-1;pointer-events:none;
   background:url("../assets/login-background.png.jpg") center center/cover no-repeat;
-  filter:blur(12px);opacity:.42;
+  filter:blur(4px);opacity:.24;
 }
 .auth-brand{padding-top:clamp(42px,9vh,90px)!important}
 .auth-logo{padding:18px 12px 24px;text-shadow:0 2px 18px rgba(0,0,0,.8)}
