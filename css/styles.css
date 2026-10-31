@@ -307,3 +307,20 @@ body{background-image:radial-gradient(ellipse at 50% -12%,rgba(76,48,105,.22),tr
 .auth-panel .field{background:rgba(9,4,17,.62);border-color:rgba(232,196,93,.34)}
 .auth-panel .btn-gold{font-size:16px;min-height:50px}
 @media(max-width:380px){.auth-brand{padding-top:34px!important}.auth-logo{padding-bottom:16px}.auth-panel{margin-top:10px!important}}
+
+
+/* LOGIN COMPACT LAYOUT + CLEAR BACKGROUND */
+#local-auth{padding:8px 14px 14px!important;background:linear-gradient(180deg,rgba(10,4,19,.18),rgba(10,4,19,.42)),url("../assets/login-background.png.jpg") center/cover no-repeat!important}
+#local-auth::before{background:url("../assets/login-background.png.jpg") center/cover no-repeat!important;filter:blur(1px)!important;opacity:.10!important;inset:0!important}
+#local-auth>div{max-width:420px!important}
+#local-auth img{width:min(78%,270px)!important;height:145px!important;object-fit:contain!important;margin:0 auto!important}
+#local-auth h2{font-size:19px!important;margin-bottom:3px!important}
+#local-auth p{line-height:1.55!important}
+#local-auth>div>p{font-size:12px!important;margin:5px auto 9px!important}
+#local-auth>div>div[style*="text-align:right"]{padding:13px!important;border-radius:18px!important}
+#local-auth form input{padding:10px!important;margin-bottom:8px!important;font-size:14px!important}
+#local-auth form label{margin-bottom:3px!important;font-size:12px!important}
+#local-auth form button,#local-auth>div>button{padding:10px!important}
+#local-auth>div>div[style*="display:flex"]{margin-bottom:8px!important}
+#local-auth>div>div[style*="display:flex"] button{padding:8px!important}
+@media(max-height:760px){#local-auth img{height:105px!important}#local-auth .auth-spacer{display:none!important}}
